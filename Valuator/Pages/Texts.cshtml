@@ -1,0 +1,29 @@
+﻿@page
+@model Valuator.Pages.TextsModel
+@{
+    ViewData["Title"] = "All Texts";
+}
+
+<h1>All Processed Texts</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Text</th>
+            <th>Rank</th>
+            <th>Similarity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in Model.Entries)
+        {
+            <tr>
+                <td>@entry.Id</td>
+                <td>@entry.Text</td>
+                <td>@entry.Rank.ToString("N2")</td>
+                <td>@entry.Similarity</td>
+            </tr>
+        }
+    </tbody>
+</table>
